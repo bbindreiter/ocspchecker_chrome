@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" href="options.css">
+  <title>OCSP Checker Options</title>
+</head>
+
+<body>
+  
+  
+
+Policy:
+<select id="policy">
+ <option value="FAIL">Fail if a certificate's state is Revoked or Unknown</option>
+ <option value="DEFAULT">Fail if a certificate's state is Revoked</option>
+ <option value="WARN">Only warn if a certificate's state is Revoked</option>
+ </select>
+
+ 
+ <br/>
+ <br/>
+ 
+ Server URL:
+<label>
+  <input type="type" id="serverUrl">
+</label>
+
+ <br/>
+ <br/>
+  
+ Cache expiration in minutes:
+<label>
+  <input type="type" id="cacheExpiration">
+</label>
+
+ <br/>
+ <br/>
+  
+
+
+<div id="status"></div>
+<button id="save">Save</button>
+
+<script src="options.js"></script>
+
+</body></html>

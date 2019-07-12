@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)chrome-error://chromewebdata/ -->
+<html dir="ltr" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="theme-color" content="#fff">
+  <meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+  <title>TLS/SSL Certificate error</title>
+  
+<link rel="stylesheet" type="text/css" href="error_ssl_revoked.css">
+
+</head>
+<body id="body" class="ssl extended-reporting-has-checkbox">
+  <div class="interstitial-wrapper">
+    <div id="main-content">
+      <div class="icon" id="icon"></div>
+      <div id="main-message">
+        <h1>TLS/SSL Certificate has been revoked</h1>
+        <p>Attackers might be trying to steal your information from <strong id="main-message-url"></strong> (for example, passwords, messages, or credit cards).</p>
+        <div id="debugging">
+          <div id="error-code" class="error-code">net::ERR_CERT_REVOKED</div>
+        </div>
+      </div>
+    </div>
+    <div class="nav-wrapper">
+      <button id="primary-button">Reload</button>
+      <button id="details-button" class="secondary-button small-link">Advanced</button>
+    </div>
+    <div id="details" class="hidden">
+      <p><span id="details-url"></span> uses SSL/TLS certificates to encrypt transmitted data. When Google Chrome tried to connect to <span id="details-url2"></span> this time, the website presented a certificate which has been revoked by Certification Authority (CA) that issued it.</p>
+      <p id="final-paragraph">You cannot visit <span id="final-paragraph-url"></span> right now because its certificate has been revoked. Network errors and attacks are usually temporary, so this page will probably work later.</p>
+    </div>
+  </div>
+
+<script src="error_ssl_revoked.js"></script>
+
+</body></html>

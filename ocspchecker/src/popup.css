@@ -1,0 +1,52 @@
+html {
+  -webkit-text-size-adjust: 100%;
+  font-size: medium;
+  font-family: 'Roboto', arial, sans-serif;
+}
+
+body {
+	color: #222222;
+	width: 320px;
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+
+.info {
+	font-size: small;
+}
+
+.hidden { display: none; }
+
+.ok { color: #4BB543; font-weight: bold;}
+.revoked { color: #DB4437; font-weight: bold;}
+.gray { color: #666666; font-weight: bold;}
+
+.ok-bg { background: #4BB543; }
+.revoked-bg { background: #DB4437; }
+.gray-bg { 	background: #666666; }
+
+.certificate-box {
+	padding-top: 24px;
+}
+
+.certificate {
+	font-weight: bold;
+	font-size: medium;
+	color: #FFFFFF;
+    padding-top: 6px;
+	padding-bottom: 6px;
+	padding-left: 6px;
+	padding-right: 8px;
+    border-radius: 4px;
+}
+
+.title {
+	font-weight: bold;
+	font-size: small;
+	padding-top: 12px;
+}
+
+.data {
+	font-size: small;
+}

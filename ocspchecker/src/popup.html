@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" href="popup.css">
+</head>
+
+<body>
+  
+  
+		<div id="http" class="hidden">
+  
+		    <h1 class="h1">HTTP Connection</h1>
+			<div class="info">The connection to the current site is over an unsecure HTTP connection, which doesn't use certificates.</div>
+			<div class="certificate-box"><span class="certificate gray-bg">No TLS/SSL Certificate used</span></div>
+			<br />
+		
+		</div>
+  
+  
+  
+		<div id="ocsp" class="hidden">
+  
+       
+			<div name="certificate_box_template" class="certificate-box hidden">
+			
+				<span name="certificate_box_title" class="certificate"></span>
+        
+				<div class="title">Subject</div>
+				<div name="certificate_box_subject" class="data"></div>
+				<div class="title">Issuer</div>
+				<div name="certificate_box_issuer" class="data"></div>
+				<div class="title">Serial Number</div>
+				<div name="certificate_box_serial" class="data"></div>
+				<div class="title">OCSP Responder</div>
+				<div name="certificate_box_ocsp_responder" class="data"></div>
+				<div class="title">OCSP Status</div>
+				<div name="certificate_box_ocsp_status" class="data"></div>
+				<br />
+				
+			</div>
+	
+		</div>
+
+<script src="popup.js"></script>
+
+</body></html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)chrome-error://chromewebdata/ -->
+<html dir="ltr" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="theme-color" content="#fff">
+  <meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+  <title>Unknown TLS/SSL Certificate Revocation State</title>
+  
+<link rel="stylesheet" type="text/css" href="error_ssl_unknown.css">
+
+</head>
+<body id="body" class="ssl extended-reporting-has-checkbox">
+  <div class="interstitial-wrapper">
+    <div id="main-content">
+      <div class="icon" id="icon"></div>
+      <div id="main-message">
+        <h1>Unknown TLS/SSL Certificate Revocation State</h1>
+        <p>The revocation state of at least one TLS/SSL Certificate cannot be determined and due to the strict policy set in the plugin's option page this error page is shown.</p>
+		<br/><br/>
+		<p>This could have one or more of the following reasons:</p>
+		<ul>
+			<li>The servers of the OCSP Checker extension cannot be reached to determine the <strong id="main-message-url"></strong> TLS/SSL Certificates state.</li>
+			<li>One of the OCSP Responders defined in the TLS/SSL Certificate is offline.</li>
+			<li>One of the OCSP Responders defined in the TLS/SSL Certificate responded with an unknown revocation state.</li>
+		</ul>
+        <div id="debugging">
+          <div id="error-code" class="error-code">net::ERR_CERT_STATE_UNKNOWN</div>
+        </div>
+      </div>
+    </div>
+    <div class="nav-wrapper">
+      <button id="primary-button">Reload</button>
+      <button id="options-button" class="secondary-button small-link">Change policy</button>
+    </div>
+  </div>
+
+<script src="error_ssl_unknown.js"></script>
+
+</body></html>
+
+
+
+ 
