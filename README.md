@@ -5,7 +5,7 @@ Due to restrictions in the Chrome APIs the OCSP request cannot be performed by t
 
 The results of the OCSP request (plus some basic certificate information) is displayed in a popup when clicking the extension's icon in the browser's menu bar. If one of the certificates is revoked the extension displays an error page (or only warning if changed in settings).
  
-[Open Extension in Chrome Web Store](https://chrome.google.com/webstore/)  
+[Open Extension in Chrome Web Store](https://chrome.google.com/webstore/detail/ocsp-checker/ajgbaimfmdjocihpimgbonjinhkeffnf/)  
 [Chrome Checker Server REST Api](https://github.com/bbindreiter/ocspchecker_server)
 
 

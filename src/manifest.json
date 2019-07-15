@@ -1,6 +1,6 @@
 {
   "name": "OCSP Checker",
-  "version": "1.0",
+  "version": "0.1",
   "description": "Performs an OCSP revocation check of the current TLS/SSL Certificate",
   "icons": {
     "16": "icon_16.png",
