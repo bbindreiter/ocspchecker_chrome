@@ -14,13 +14,13 @@ var POLICY_ONLY_WARN = "WARN";
 var SERVER_URL = "https://ocspchecker.com/api/check"
 var CACHE_EXPIRATION = 240;
 
-
 var cache = {};
 var policy = POLICY_DEFAULT;
 var serverUrl = SERVER_URL;
 var cacheExpiration = CACHE_EXPIRATION;
 
-  
+
+
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 	var host = "";
 	var protocol = "";
@@ -36,10 +36,8 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 		purgeCache();
 
 		console.log("Tab " + tabId + ": changeInfo.url=" + changeInfo.url + ", tab.url=" + tab.url + ", cache " + (tabId in cache) + ", host " + host + ", protocol: " + protocol);	
-		console.log(cache);
-		
+
 		if (tabId in cache && cache[tabId].host == host && cache[tabId].state != TAB_STATE_UNKNOWN) {
-			console.log("set from cache " + cache[tabId].state);
 			if (cache[tabId].state == TAB_NOT_HTTPS)
 				setNotHttpsTabState(tabId, host, tab.url);
 			else if (cache[tabId].state == TAB_NOT_REVOKED) {
@@ -76,8 +74,6 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 
 
 function request(serverUrl, tabId, host, url) {
-	console.log("Make request for host " + host);	
-	
 	var request = new XMLHttpRequest();
 	request.onreadystatechange = function() {
 		
@@ -97,7 +93,7 @@ function request(serverUrl, tabId, host, url) {
 
 		// Parse
 		try {
-			console.log("response: " + this.responseText);		
+
 			var responseJson = JSON.parse(this.responseText);
 			var containsRevokedCert = false;
 			var containsUnknownCert = false;
@@ -139,8 +135,6 @@ function request(serverUrl, tabId, host, url) {
 
 
 function clearTabState(tabId) {
-	console.log("clearTabState for tab " + tabId);
-	
 	chrome.browserAction.setBadgeText({text: "", tabId: tabId});
 	chrome.browserAction.setTitle({title: "", tabId: tabId});
 	chrome.browserAction.disable();
@@ -149,8 +143,6 @@ function clearTabState(tabId) {
 }
 
 function setNotHttpsTabState(tabId, host, url) {
-	console.log("setNotHttpsTabState for tab " + tabId);
-	
 	chrome.browserAction.setBadgeBackgroundColor({color: "#666666", tabId: tabId});
 	chrome.browserAction.setBadgeText({text: "HTTP", tabId: tabId});
 	chrome.browserAction.setTitle({title: "No TLS/SSL Certificate used", tabId: tabId});
@@ -160,8 +152,6 @@ function setNotHttpsTabState(tabId, host, url) {
 }
 
 function setNotRevokedTabState(tabId, host, url, serverResponse) {
-	console.log("setNotRevokedTabState for tab " + tabId);
-	
 	chrome.browserAction.setBadgeBackgroundColor({color: "#4BB543", tabId: tabId});
 	chrome.browserAction.setBadgeText({text: "OK", tabId: tabId});
 	chrome.browserAction.setTitle({title: "TLS/SSL Certificate not revoked", tabId: tabId});
@@ -171,8 +161,6 @@ function setNotRevokedTabState(tabId, host, url, serverResponse) {
 }
 
 function setRevokedTabState(tabId, host, url, serverResponse) {
-	console.log("setRevokedTabState for tab " + tabId);
-
 	chrome.browserAction.setBadgeBackgroundColor({color: "#DB4437", tabId: tabId});
 	chrome.browserAction.setBadgeText({text: "REV", tabId: tabId});
 	chrome.browserAction.setTitle({title: "TLS/SSL Certificate has been revoked", tabId: tabId});
@@ -182,8 +170,6 @@ function setRevokedTabState(tabId, host, url, serverResponse) {
 }
 
 function setUnknownTabState(tabId, host, url) {
-	console.log("setUnknownTabState for tab " + tabId);
-
 	chrome.browserAction.setBadgeBackgroundColor({color: "#666666", tabId: tabId});
 	chrome.browserAction.setBadgeText({text: "UKN", tabId: tabId});
 	chrome.browserAction.setTitle({title: "Unknown TLS/SSL Certificate Revocation State", tabId: tabId});
@@ -201,13 +187,9 @@ function loadSettings() {
 }
 
 function purgeCache() {
-	
-	console.log("purge cache expiration " + cacheExpiration);
 	var currentTime = new Date().getTime();
 	
 	for (var key in cache) {
-		
-		
 		var diff = currentTime - cache[key].creationTime;
 		if (diff > (cacheExpiration * 60000)) {
 			console.log("clear cache tabId " + key);

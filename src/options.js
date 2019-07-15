@@ -1,5 +1,3 @@
-
-// Saves options to chrome.storage
 function saveOptions() {
   var policy = document.getElementById('policy').value;
   var serverUrl = document.getElementById('serverUrl').value;
@@ -19,8 +17,6 @@ function saveOptions() {
   });
 }
 
-// Restores select box and checkbox state using the preferences
-// stored in chrome.storage.
 function restoreOptions() {
 	
 	var background = chrome.extension.getBackgroundPage();

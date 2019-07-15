@@ -5,13 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	chrome.tabs.query( {currentWindow: true, active : true}, function(tabArray){ 	
 		var cacheItem = background.cache[tabArray[0].id];
 		
-		
-		
 		if (cacheItem != undefined) {
-			
-			console.log("popup cacheItem " + cacheItem.state);
-			console.log("const background " + background.TAB_NOT_HTTPS);
-		
 			if (cacheItem.state == background.TAB_NOT_HTTPS) {
 				document.getElementById("http").classList.remove("hidden");
 			}
