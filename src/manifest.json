@@ -1,6 +1,6 @@
 {
   "name": "OCSP Checker",
-  "version": "0.1",
+  "version": "0.2",
   "description": "Performs an OCSP revocation check of the current TLS/SSL Certificate",
   "icons": {
     "16": "icon_16.png",
@@ -16,7 +16,7 @@
   "web_accessible_resources": ["error_ssl_revoked.html", "error_ssl_revoked.js", "error_ssl_unknown.html", "error_ssl_unknown.js"],
   "background": {
     "scripts": ["background.js"],
-    "persistent": false
+    "persistent": true
   },
   "options_page": "options.html",
   "manifest_version": 2
