@@ -11,7 +11,7 @@ The results of the OCSP request (plus some basic certificate information) is dis
 
 
 
-###Screenshots
+### Screenshots
 
 ![Screenshot](screenshots/ok_popup.jpg)
 
