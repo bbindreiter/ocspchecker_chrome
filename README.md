@@ -18,3 +18,7 @@ The results of the OCSP request (plus some basic certificate information) is dis
 ![Screenshot](screenshots/revoked_error_page.jpg)
 
 ![Screenshot](screenshots/revoked_popup.jpg)
+
+
+### Attribution
+Icon: https://material.io/resources/icons/ (Apache License 2.0)
