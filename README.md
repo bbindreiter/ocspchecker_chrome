@@ -1,3 +1,8 @@
+# END OF LIFE
+This project has been discontinued and the extension is no longer available on the Chrome Web Store.
+
+
+
 ## OCSP Checker
 OCSP Checker is a browser extension for Chrome that performs an OCSP request to obtain the revocation status of all used SSL certificates on the currently visited website.
 
